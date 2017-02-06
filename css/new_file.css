@@ -1,0 +1,281 @@
+body,div{
+	padding: 0;
+	margin: 0;
+}
+/*动画样式定义*/
+@-webkit-keyframes  rock{
+	0%{transform: rotate(0deg);}
+	10%{transform: rotate(3deg);}
+	20%{transform: rotate(-3deg);}
+	30%{transform: rotate(2deg);}
+	40%{transform: rotate(-2deg);}
+	50%{transform: rotate(1deg);}
+	60%{transform: rotate(-1deg);}
+	70%{transform: rotate(0.5deg);}
+	80%{transform: rotate(-0.5deg);}
+	100%{transform: rotate(0deg);}
+}
+body{
+	background: #000;
+	min-width: 1200px;
+	min-height: 600px;
+	/*这个属性可以使页面上的字体抗锯齿,使用后字体看起来会更清晰舒服。*/
+	-webkit-font-smoothing: antialiased;
+	font-family: simsun,sans-serif;
+}
+.main{
+	width: 1200px;
+	height: 600px;
+	background: #000 url(../img/bg.jpg);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -600px;
+	margin-top: -300px;
+	overflow: hidden;
+}.c_zongzi_box{
+	width: 312px;
+	height: 305px;
+	position: absolute;
+	left: 700px;
+	top: 184px;
+}
+.c_zongzi_box_rock{
+	-webkit-animation: rock 2s infinite;
+}
+.caption_rock{
+	-webkit-animation: rock 3s infinite;
+}
+.c_zongzi{
+	width: 312px;
+	height: 305px;
+	background: url(../img/zz.png);
+}
+.c_zongzi_out{
+	opacity: 0;
+	transform: scale(0.5);
+}
+.c_rope_1{
+	width: 218px;
+	height: 180px;
+	background: url(../img/line_1.png);
+	position: absolute;
+	left: 10px;
+	top: 120px;
+	z-index: 300;
+	cursor: pointer;
+}
+.c_rope_2{
+	width: 219px;
+	height: 159px;
+	background: url(../img/line_2.png);
+	position: absolute;
+	left: 10px;
+	top: 158px;
+}
+.c_rope_3{
+	width: 264px;
+	height: 117px;
+	background: url(../img/line_3.png);
+	position: absolute;
+	left: 10px;
+	top: 220px;
+}
+.c_rope_4{
+	width: 288px;
+	height: 56px;
+	background: url(../img/line_4.png);
+	position: absolute;
+	left: 10px;
+	top: 290px;
+}
+.c_rope_0{
+	display: none;
+}
+.c_zongziMeat{
+	width: 288px;
+	height: 206px;
+	background: url(../img/zzr_1.png) no-repeat;
+	position: absolute;
+	left: 40px;
+	top: 34px;
+	z-index: 10;
+	opacity: 0;
+	transform-origin: top center; 
+	transform: scale(0.8);
+	transition: all 1s; 
+}
+.c_zongziMeat_in{
+	opacity: 1;
+	transform: scale(1);
+}
+.c_leftLeaf{
+	width: 114px;
+	height: 266px;
+	background: url(../img/leaf_left.png);
+	position: absolute;
+	left: 20px;
+	top: -50px;
+	z-index: 1;
+	opacity: 0;
+	transform-origin: left bottom;
+	transition: all 1s; 
+}
+.c_leftLeaf_in{
+	opacity: 1;
+	transform: rotate(-5deg);
+}
+.c_leftLeaf_out{
+	opacity: 0;
+	transform: rotate(-15deg);
+}
+.c_rightLeaf{
+	width: 318px;
+	height: 338px;
+	background: url(../img/leaf_right.png);
+	position: absolute;
+	left: 90px;
+	top: -80px;
+	z-index: 21;
+	opacity: 0;
+	transform-origin: left bottom;
+	transition: all 1s; 
+}
+.c_rightLeaf_in{
+	opacity: 1;
+	transform: rotate(5deg) scale(0.8);
+}
+.c_rightLeaf_out{
+	opacity: 0;
+	transform: rotate(15deg) scale(0.8);
+}
+.c_bottomLeaf{
+	width: 618px;
+	height: 468px;
+	background: url(../img/leaf_expand.png);
+	position: absolute;
+	left: -150px;
+	top: -60px;
+	z-index: 5;
+	opacity: 0;
+	transition: all 1s; 
+}
+.c_bottomLeaf_in{
+	opacity: 1;
+}
+.c_text_1,
+.c_text_2{
+	width: 180px;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -70px;
+	margin-top: -50px;
+	z-index: 50;
+	transform-origin: center center;
+	transform: scale(0.8); 
+	opacity: 0;
+	transition: all 1s; 
+}
+.c_text_1{
+	background: url(../img/t_jixiang.png);
+}
+.c_text_2{
+	background: url(../img/t_ruyi.png);
+}
+.c_text_in{
+	opacity: 1;
+}
+.text{
+	position: absolute;
+	width: 400px;
+	height: 370px;
+	left: 180px;
+	top: 140px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+}
+.text_in{}
+.text .caption{
+	width: 400px;
+	height: 240px;
+	background: url(../img/caption.png) no-repeat;
+	margin-left: 40px;
+	opacity: 0;
+	transition: all 1s; 
+}
+.text .to,
+.text .message,
+.text .from{
+	margin:10px 0 0 40px;
+	opacity: 0;
+	transition: all 1s; 
+}
+.text .from{
+	text-align: right;
+}
+.text_in .caption,
+.text_in .to,
+.text_in .message,
+.text_in .from{
+	opacity: 1;
+	margin-left: 0;
+}
+
+/*粽子肉旋转*/
+.c_zongziMeat_view_1{
+	transition: all 0;
+	background-image: url(../img/zzr_1.png);
+}
+.c_zongziMeat_view_2{
+	transition: all 0;
+	background-image: url(../img/zzr_2.png);
+}
+.c_zongziMeat_view_3{
+	transition: all 0;
+	background-image: url(../img/zzr_3.png);
+}
+.c_zongziMeat_view_4{
+	transition: all 0;
+	background-image: url(../img/zzr_4.png);
+}
+.c_zongziMeat_view_0{
+	transition: all 0;
+	background-image: url(../img/zzr_1.png);
+	transform: rotateY(180deg);
+}
+/*文字的旋转*/
+.c_text_view_0{
+	transition: all 0;
+	transform: scale(0.8);
+}
+.c_text_mirror_0{
+	transition: all 0;
+	display: none;
+}
+.c_text_view_2{
+	transition: all 0;
+	transform: scale(0.8) rotateY(30deg) translate(-50px,0) rotate(8deg);
+}
+.c_text_mirror_2{
+	transition: all 0;
+	transform: scale(0.7) rotateY(70deg) translate(283px,-15px) rotate(-8deg);
+}
+.c_text_view_3{
+	transition: all 0;
+	transform: scale(0.75) rotateY(49deg) translate(-94px,0) rotate(15deg);
+}
+.c_text_mirror_3{
+	transition: all 0;
+	transform: scale(.75) rotateY(49deg) translate(118px, 0) rotate(-15deg);
+}
+.c_text_view_4{
+	transition: all 0;
+	transform: scale(.6) rotateY(50deg) translate(-196px, 10px) rotate(24deg);
+}
+.c_text_mirror_4{
+	transition: all 0;
+	transform: scale(0.8) rotateY(30deg) translate(58px,10px) rotate(-5deg);
+}
